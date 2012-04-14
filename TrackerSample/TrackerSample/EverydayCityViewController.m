@@ -1,6 +1,6 @@
 //
-//  TrackerSampleViewController.m
-//  TrackerSample
+//  EverydayCityViewController.m
+//  EverydayCity
 //
 //  Copyright (c) 2012 Geoloqi, Inc. All rights reserved.
 //

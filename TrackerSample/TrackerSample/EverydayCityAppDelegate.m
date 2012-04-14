@@ -1,6 +1,6 @@
 //
-//  TrackerSampleAppDelegate.m
-//  TrackerSample
+//  EverydayCityAppDelegate.m
+//  EverydayCity
 //
 //  Copyright (c) 2012 Geoloqi, Inc. All rights reserved.
 //

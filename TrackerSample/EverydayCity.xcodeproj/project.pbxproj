@@ -35,9 +35,9 @@
 		497120DA1490755C0046BDA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		497120DC1490755C0046BDA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		497120DE1490755C0046BDA3 /* EverydayCity-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EverydayCity-Prefix.pch"; sourceTree = "<group>"; };
-		497120DF1490755C0046BDA3 /* EverydayCityAppDelegate.h */ = {isa = PBXFileReference; path = EverydayCityAppDelegate.h; sourceTree = "<group>"; };
+		497120DF1490755C0046BDA3 /* EverydayCityAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EverydayCityAppDelegate.h; sourceTree = "<group>"; };
 		497120E01490755C0046BDA3 /* EverydayCityAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EverydayCityAppDelegate.m; sourceTree = "<group>"; };
-		497120E21490755C0046BDA3 /* EverydayCityViewController.h */ = {isa = PBXFileReference; path = EverydayCityViewController.h; sourceTree = "<group>"; };
+		497120E21490755C0046BDA3 /* EverydayCityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EverydayCityViewController.h; sourceTree = "<group>"; };
 		497120E31490755C0046BDA3 /* EverydayCityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EverydayCityViewController.m; sourceTree = "<group>"; };
 		497120F11490755C0046BDA3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		49A878E2149D34D200B7D168 /* LQConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQConfig.h; sourceTree = "<group>"; };
