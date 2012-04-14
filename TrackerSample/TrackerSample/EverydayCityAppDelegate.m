@@ -107,6 +107,12 @@ EverydayCityAppDelegate *appDelegate;
     [tmpSession runAPIRequest:request completion:^(NSHTTPURLResponse *response, NSDictionary *responseDictionary, NSError *error) {
         // On response, store the Geoloqi token and start tracking in passive mode
         NSLog(@"Response! %@", responseDictionary);
+        if([responseDictionary objectForKey:@"lq_access_token"]) {
+            [[LQTracker sharedTracker] setSession:[LQSession sessionWithAccessToken:[responseDictionary objectForKey:@"lq_access_token"]]];
+            [[LQTracker sharedTracker] setProfile:LQTrackerProfilePassive];
+        } else {
+            // Error logging in
+        }
     }];
 }
 
