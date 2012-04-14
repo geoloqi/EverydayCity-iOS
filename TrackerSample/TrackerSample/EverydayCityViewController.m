@@ -11,10 +11,7 @@
 @implementation EverydayCityViewController
 
 @synthesize currentTrackingProfile;
-@synthesize pushNotificationStatus;
-@synthesize registerForPushButton;
 @synthesize currentLocationField, currentLocationActivityIndicator;
-@synthesize pushNotificationAlerts, pushNotificationBadges, pushNotificationSounds;
 
 - (void)didReceiveMemoryWarning
 {
@@ -62,18 +59,6 @@
 
 #pragma mark -
 
-- (void)refreshPushNotificationStatus
-{
-    self.pushNotificationAlerts.highlighted = [LQSession savedSession].pushAlertsEnabled;
-    self.pushNotificationSounds.highlighted = [LQSession savedSession].pushSoundsEnabled;
-    self.pushNotificationBadges.highlighted = [LQSession savedSession].pushBadgesEnabled;
-    if([LQSession savedSession].pushAlertsEnabled) {
-        self.pushNotificationStatus.text = @"Push notifications are enabled";
-    } else {
-        self.pushNotificationStatus.text = @"Push notifications are not enabled";
-    }
-}
-
 - (int)segmentIndexForTrackingProfile:(LQTrackerProfile)profile
 {
     switch(profile) {
@@ -108,10 +93,8 @@
     [LQSession registerForPushNotificationsWithCallback:^(NSData *deviceToken, NSError *error) {
         [self refreshPushNotificationStatus];
         if(error){
-            self.pushNotificationStatus.text = [NSString stringWithFormat:@"Error: %@", [error localizedDescription]];
             NSLog(@"Failed to register for push tokens: %@", error);
         } else {
-            self.pushNotificationStatus.text = [NSString stringWithFormat:@"Successfully registered! %@", deviceToken];
             NSLog(@"Got a push token! %@", deviceToken);
         }
     }];
