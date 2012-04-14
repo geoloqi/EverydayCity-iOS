@@ -8,63 +8,52 @@
 #import "EverydayCityAppDelegate.h"
 
 #import "EverydayCityViewController.h"
+#import "WelcomeViewController.h"
+
+@interface LQSDKUtils : NSObject
++ (id)objectFromJSONData:(NSData *)data error:(NSError **)error;
++ (NSData *)dataWithJSONObject:(id)object error:(NSError **)error;
+@end
 
 
+EverydayCityAppDelegate *appDelegate;
 
 @implementation EverydayCityAppDelegate {
 }
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
-
-- (void)runAnotherRequest;
-{
-	LQSession *blahSession = [[LQSession alloc] init];
-	
-	NSURLRequest *r = [blahSession requestWithMethod:@"GET" path:@"/account/username?username=aaronpk" payload:nil];
-	[blahSession runAPIRequest:r completion:^(NSHTTPURLResponse *response, NSDictionary *responseDictionary, NSError *error) {
-		NSLog(@"Response: %@ error:%@", responseDictionary, error);
-	}];
-	
-}
+@synthesize facebook;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    appDelegate = self;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 		
-	self.window.rootViewController = self.viewController = [[EverydayCityViewController alloc] initWithNibName:nil bundle:nil];
-    [self.window makeKeyAndVisible];
-
-    if([@"" isEqualToString:LQ_APIKey]) {
-        [[[UIAlertView alloc] initWithTitle:@"You Need an API Key!" message:@"You need an API key from developers.geoloqi.com" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Visit Site", nil] show];
-    }
-
     // Sets your API Key and secret
 	[LQSession setAPIKey:LQ_APIKey secret:LQ_APISecret];
 
-    // Creates a user account if not already set up.
+    // Set up Facebook SDK
+    facebook = [[Facebook alloc] initWithAppId:FB_APP_ID andDelegate:self];
 
-    // Note: This will not start tracking location right now, because it would make the iPhone 
-    // message "This app would like to use your location" immediately pop up when the app 
-    // is launched for the first time. Instead, we create the user account and set the tracking
-    // profile to "LQTrackerProfileOff", and call setProfile:LQTrackerProfilePassive when we want
-    // to turn on tracking. 
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"FBAccessTokenKey"] 
+        && [defaults objectForKey:@"FBExpirationDateKey"]) {
+        facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+    }
     
-    // If a user account has already been created, this will resume the tracker in the last state
-    // it was left in when the app last quit.
-
-    [LQTracker configureAnonymousUserAccountWithUserInfo:nil profile:LQTrackerProfileOff];
-
+    if (![LQSession savedSession] || ![facebook isSessionValid]) {
+        self.window.rootViewController = self.viewController = [[WelcomeViewController alloc] initWithNibName:nil bundle:nil];
+    } else {
+        self.window.rootViewController = self.viewController = [[EverydayCityViewController alloc] initWithNibName:nil bundle:nil];
+    }
+    [self.window makeKeyAndVisible];
+    
     // Tell the SDK the app finished launching so it can properly handle push notifications, etc
     [LQSession application:application didFinishLaunchingWithOptions:launchOptions];
 
     return YES;
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://developers.geoloqi.com/ios?utm_medium=iPhone+Sample+App"]];
-	if(![[UIApplication sharedApplication] openURL:url])
-		NSLog(@"%@%@",@"Failed to open url:",[url description]);
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
@@ -86,6 +75,55 @@
  */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [LQSession handlePush:userInfo];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [facebook handleOpenURL:url]; 
+}
+
+- (void)fbDidLogin {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
+    [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
+    [defaults synchronize];
+    NSLog(@"Logged in to Facebook! Token: %@ Expiration: %@", [facebook accessToken], [facebook expirationDate]);
+    
+    // Send FB token to the server
+    NSURL *url = [NSURL URLWithString:@"http://everydaycity.com/api/users"];
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url 
+                                                                cachePolicy:NSURLRequestReloadIgnoringCacheData 
+                                                            timeoutInterval:10.0];
+    
+	[request setHTTPMethod:@"POST"];
+
+    NSError *jsonError = nil;
+    NSData *jsonData = [LQSDKUtils dataWithJSONObject:[NSDictionary dictionaryWithObjectsAndKeys:[facebook accessToken], @"fb_access_token",
+                                                       [NSNumber numberWithFloat:[[facebook expirationDate] timeIntervalSince1970]], @"fb_expiration_date", nil] 
+                                                error:&jsonError];
+    [request setHTTPBody:jsonData];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+
+    LQSession *tmpSession = [[LQSession alloc] init];
+    [tmpSession runAPIRequest:request completion:^(NSHTTPURLResponse *response, NSDictionary *responseDictionary, NSError *error) {
+        // On response, store the Geoloqi token and start tracking in passive mode
+        NSLog(@"Response! %@", responseDictionary);
+    }];
+}
+
+- (void)fbDidLogout {
+    NSLog(@"Logged out of Facebook!");
+}
+
+- (void)fbDidNotLogin:(BOOL)cancelled {
+    
+}
+
+- (void)fbDidExtendToken:(NSString *)accessToken expiresAt:(NSDate *)expiresAt {
+    
+}
+
+- (void)fbSessionInvalidated {
+    
 }
 
 @end

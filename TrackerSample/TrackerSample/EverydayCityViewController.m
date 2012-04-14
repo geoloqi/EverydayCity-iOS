@@ -39,7 +39,6 @@
     [super viewWillAppear:animated];
     
     self.currentTrackingProfile.selectedSegmentIndex = [self segmentIndexForTrackingProfile:[[LQTracker sharedTracker] profile]];
-    [self refreshPushNotificationStatus];
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -6,13 +6,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
 
 @class EverydayCityViewController;
 
-@interface EverydayCityAppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate>
+@interface EverydayCityAppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate, FBSessionDelegate> {
+    Facebook *facebook;
+}
+
+@property (nonatomic, retain) Facebook *facebook;
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
 
-@property (strong, nonatomic) IBOutlet EverydayCityViewController *viewController;
+@property (strong, nonatomic) IBOutlet UIViewController *viewController;
 
 @end
+
+extern EverydayCityAppDelegate *appDelegate;
