@@ -5,10 +5,10 @@
 //  Copyright (c) 2012 Geoloqi, Inc. All rights reserved.
 //
 
-#import "TrackerSampleViewController.h"
+#import "EverydayCityViewController.h"
 
 
-@implementation TrackerSampleViewController
+@implementation EverydayCityViewController
 
 @synthesize currentTrackingProfile;
 @synthesize pushNotificationStatus;

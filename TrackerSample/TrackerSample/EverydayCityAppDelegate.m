@@ -5,13 +5,13 @@
 //  Copyright (c) 2012 Geoloqi, Inc. All rights reserved.
 //
 
-#import "TrackerSampleAppDelegate.h"
+#import "EverydayCityAppDelegate.h"
 
-#import "TrackerSampleViewController.h"
+#import "EverydayCityViewController.h"
 
 
 
-@implementation TrackerSampleAppDelegate {
+@implementation EverydayCityAppDelegate {
 }
 
 @synthesize window = _window;
@@ -32,7 +32,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 		
-	self.window.rootViewController = self.viewController = [[TrackerSampleViewController alloc] initWithNibName:nil bundle:nil];
+	self.window.rootViewController = self.viewController = [[EverydayCityViewController alloc] initWithNibName:nil bundle:nil];
     [self.window makeKeyAndVisible];
 
     if([@"" isEqualToString:LQ_APIKey]) {

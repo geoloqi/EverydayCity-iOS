@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TrackerSampleViewController : UIViewController {
+@interface EverydayCityViewController : UIViewController {
     
 }
 
