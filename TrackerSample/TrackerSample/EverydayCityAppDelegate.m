@@ -110,6 +110,10 @@ EverydayCityAppDelegate *appDelegate;
         if([responseDictionary objectForKey:@"lq_access_token"]) {
             [[LQTracker sharedTracker] setSession:[LQSession sessionWithAccessToken:[responseDictionary objectForKey:@"lq_access_token"]]];
             [[LQTracker sharedTracker] setProfile:LQTrackerProfilePassive];
+            
+            // Show the main app window
+            [self.viewController presentViewController:[[EverydayCityViewController alloc] initWithNibName:nil bundle:nil] animated:YES completion:NULL]; 
+            
         } else {
             // Error logging in
         }
