@@ -121,8 +121,9 @@ EverydayCityAppDelegate *appDelegate;
 
     // Log out of Geoloqi too
     [[LQTracker sharedTracker] setProfile:LQTrackerProfileOff];
-    [[LQTracker sharedTracker] setSession:nil];
     [LQSession setSavedSession:nil];
+    [[LQTracker sharedTracker] setSession:nil];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 
     [self.viewController showProperView:YES];
 }
