@@ -40,7 +40,10 @@
     
     self.currentTrackingProfile.selectedSegmentIndex = [self segmentIndexForTrackingProfile:[[LQTracker sharedTracker] profile]];
     
-    [self getLocationButtonWasTapped:nil];
+    NSLog(@"Date of last location update: %@", [[LQTracker sharedTracker] dateOfLastLocationUpdate]);
+    if([LQSession savedSession]) {
+        [self getLocationButtonWasTapped:nil];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -106,6 +109,10 @@
     }];
 }
 
+- (void)viewRefreshTimerDidFire:(NSTimer *)timer {
+    [self getLocationButtonWasTapped:nil];
+}
+
 - (IBAction)getLocationButtonWasTapped:(UIButton *)sender
 {
     // self.currentLocationField.text = @"Loading...";
@@ -121,25 +128,21 @@
 	[[LQSession savedSession] runAPIRequest:request completion:^(NSHTTPURLResponse *response, NSDictionary *responseDictionary, NSError *error) {
 		NSLog(@"Response: %@ error:%@", responseDictionary, error);
         if(error) {
-            self.currentLocationField.text = [error localizedDescription];
+            self.currentLocationField.text = @"";
+            // If there was an error, set a timer to try updating the view again in a few seconds
+
+            [NSTimer scheduledTimerWithTimeInterval:6.0
+                                             target:self
+                                           selector:@selector(viewRefreshTimerDidFire:)
+                                           userInfo:nil
+                                            repeats:NO];    
+            
+            
         } else {
-//            NSMutableArray *loc = [NSMutableArray arrayWithCapacity:4];
-//            if([responseDictionary objectForKey:@"intersection"]) {
-//                [loc addObject:[responseDictionary objectForKey:@"intersection"]];
-//            }
-//            if([responseDictionary objectForKey:@"locality_name"]) {
-//                [loc addObject:[responseDictionary objectForKey:@"locality_name"]];
-//            }
-//            if([responseDictionary objectForKey:@"region_name"]) {
-//                [loc addObject:[responseDictionary objectForKey:@"region_name"]];
-//            }
-//            if([responseDictionary objectForKey:@"country_name"]) {
-//                [loc addObject:[responseDictionary objectForKey:@"country_name"]];
-//            }
-//            self.currentLocationField.text = [loc componentsJoinedByString:@", "];
             self.currentLocationField.text = [responseDictionary objectForKey:@"response"];
         }
         self.currentLocationActivityIndicator.hidden = YES;
+        
 	}];
 }
 
