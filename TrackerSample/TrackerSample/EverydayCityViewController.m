@@ -6,7 +6,7 @@
 //
 
 #import "EverydayCityViewController.h"
-
+#import "EverydayCityAppDelegate.h"
 
 @implementation EverydayCityViewController
 
@@ -39,6 +39,8 @@
     [super viewWillAppear:animated];
     
     self.currentTrackingProfile.selectedSegmentIndex = [self segmentIndexForTrackingProfile:[[LQTracker sharedTracker] profile]];
+    
+    [self getLocationButtonWasTapped:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -57,6 +59,11 @@
 }
 
 #pragma mark -
+
+- (IBAction)fbLogoutWasTapped:(UIButton *)sender 
+{
+    [[appDelegate facebook] logout];
+}
 
 - (int)segmentIndexForTrackingProfile:(LQTrackerProfile)profile
 {
@@ -101,29 +108,36 @@
 
 - (IBAction)getLocationButtonWasTapped:(UIButton *)sender
 {
-    self.currentLocationField.text = @"Loading...";
+    // self.currentLocationField.text = @"Loading...";
     self.currentLocationActivityIndicator.hidden = NO;
-    NSURLRequest *req = [[LQSession savedSession] requestWithMethod:@"GET" path:@"/location/context" payload:nil];
+
+    NSURL *url = [NSURL URLWithString:@"http://everydaycity.com/api/status"];
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url 
+                                                                cachePolicy:NSURLRequestReloadIgnoringCacheData 
+                                                            timeoutInterval:10.0];
+	[request setHTTPMethod:@"GET"];
+    [request setValue:[NSString stringWithFormat:@"Bearer %@", [LQSession savedSession].accessToken] forHTTPHeaderField:@"Authorization"];
     
-	[[LQSession savedSession] runAPIRequest:req completion:^(NSHTTPURLResponse *response, NSDictionary *responseDictionary, NSError *error) {
+	[[LQSession savedSession] runAPIRequest:request completion:^(NSHTTPURLResponse *response, NSDictionary *responseDictionary, NSError *error) {
 		NSLog(@"Response: %@ error:%@", responseDictionary, error);
         if(error) {
             self.currentLocationField.text = [error localizedDescription];
         } else {
-            NSMutableArray *loc = [NSMutableArray arrayWithCapacity:4];
-            if([responseDictionary objectForKey:@"intersection"]) {
-                [loc addObject:[responseDictionary objectForKey:@"intersection"]];
-            }
-            if([responseDictionary objectForKey:@"locality_name"]) {
-                [loc addObject:[responseDictionary objectForKey:@"locality_name"]];
-            }
-            if([responseDictionary objectForKey:@"region_name"]) {
-                [loc addObject:[responseDictionary objectForKey:@"region_name"]];
-            }
-            if([responseDictionary objectForKey:@"country_name"]) {
-                [loc addObject:[responseDictionary objectForKey:@"country_name"]];
-            }
-            self.currentLocationField.text = [loc componentsJoinedByString:@", "];
+//            NSMutableArray *loc = [NSMutableArray arrayWithCapacity:4];
+//            if([responseDictionary objectForKey:@"intersection"]) {
+//                [loc addObject:[responseDictionary objectForKey:@"intersection"]];
+//            }
+//            if([responseDictionary objectForKey:@"locality_name"]) {
+//                [loc addObject:[responseDictionary objectForKey:@"locality_name"]];
+//            }
+//            if([responseDictionary objectForKey:@"region_name"]) {
+//                [loc addObject:[responseDictionary objectForKey:@"region_name"]];
+//            }
+//            if([responseDictionary objectForKey:@"country_name"]) {
+//                [loc addObject:[responseDictionary objectForKey:@"country_name"]];
+//            }
+//            self.currentLocationField.text = [loc componentsJoinedByString:@", "];
+            self.currentLocationField.text = [responseDictionary objectForKey:@"response"];
         }
         self.currentLocationActivityIndicator.hidden = YES;
 	}];

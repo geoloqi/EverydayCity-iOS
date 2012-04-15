@@ -122,6 +122,13 @@ EverydayCityAppDelegate *appDelegate;
 
 - (void)fbDidLogout {
     NSLog(@"Logged out of Facebook!");
+
+    // Log out of Geoloqi too
+    [[LQTracker sharedTracker] setProfile:LQTrackerProfileOff];
+    [[LQTracker sharedTracker] setSession:nil];
+    [LQSession setSavedSession:nil];
+
+    [self.viewController presentViewController:[[WelcomeViewController alloc] initWithNibName:nil bundle:nil] animated:YES completion:NULL]; 
 }
 
 - (void)fbDidNotLogin:(BOOL)cancelled {
