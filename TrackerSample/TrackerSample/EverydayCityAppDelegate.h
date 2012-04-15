@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
+#import "MainViewController.h"
 
 @class EverydayCityViewController;
 
@@ -18,7 +19,7 @@
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
 
-@property (strong, nonatomic) IBOutlet UIViewController *viewController;
+@property (strong, nonatomic) IBOutlet MainViewController *viewController;
 
 @end
 

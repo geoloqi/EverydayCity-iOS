@@ -29,6 +29,7 @@
 		0FE6BA92153A6312002D91DD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FE6BA91153A6311002D91DD /* Icon.png */; };
 		0FE6BA95153A67BB002D91DD /* background-geofencing-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FE6BA93153A67BB002D91DD /* background-geofencing-icon.png */; };
 		0FE6BA96153A67BB002D91DD /* background-geofencing-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FE6BA94153A67BB002D91DD /* background-geofencing-icon@2x.png */; };
+		0FE6BA99153B4422002D91DD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE6BA98153B4421002D91DD /* MainViewController.m */; };
 		493B86A114930FA0000AC7DD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493B86A014930FA0000AC7DD /* CoreLocation.framework */; };
 		493C097D149D8BE300F2D05A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493C097C149D8BE300F2D05A /* CoreFoundation.framework */; };
 		496F6E42149DEED100FD050F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 496F6E41149DEED100FD050F /* libsqlite3.dylib */; };
@@ -80,6 +81,8 @@
 		0FE6BA91153A6311002D91DD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		0FE6BA93153A67BB002D91DD /* background-geofencing-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-geofencing-icon.png"; sourceTree = "<group>"; };
 		0FE6BA94153A67BB002D91DD /* background-geofencing-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-geofencing-icon@2x.png"; sourceTree = "<group>"; };
+		0FE6BA97153B4421002D91DD /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		0FE6BA98153B4421002D91DD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		493B86A014930FA0000AC7DD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		493C097C149D8BE300F2D05A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		496F6E41149DEED100FD050F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -207,6 +210,8 @@
 				497120E31490755C0046BDA3 /* EverydayCityViewController.m */,
 				49E265D314C3949C00B19D71 /* EverydayCityViewController.xib */,
 				497120D71490755C0046BDA3 /* Supporting Files */,
+				0FE6BA97153B4421002D91DD /* MainViewController.h */,
+				0FE6BA98153B4421002D91DD /* MainViewController.m */,
 			);
 			name = EverydayCity;
 			path = TrackerSample;
@@ -315,6 +320,7 @@
 				497120E41490755C0046BDA3 /* EverydayCityViewController.m in Sources */,
 				0FE4891614FEFD5500F3F1F9 /* JSONKit.m in Sources */,
 				0FE6BA321539FD0B002D91DD /* WelcomeViewController.m in Sources */,
+				0FE6BA99153B4422002D91DD /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

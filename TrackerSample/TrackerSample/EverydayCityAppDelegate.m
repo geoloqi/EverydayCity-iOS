@@ -7,8 +7,7 @@
 
 #import "EverydayCityAppDelegate.h"
 
-#import "EverydayCityViewController.h"
-#import "WelcomeViewController.h"
+#import "MainViewController.h"
 
 @interface LQSDKUtils : NSObject
 + (id)objectFromJSONData:(NSData *)data error:(NSError **)error;
@@ -43,12 +42,9 @@ EverydayCityAppDelegate *appDelegate;
         facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
     }
     
-    if (![LQSession savedSession] || ![facebook isSessionValid]) {
-        self.window.rootViewController = self.viewController = [[WelcomeViewController alloc] initWithNibName:nil bundle:nil];
-    } else {
-        self.window.rootViewController = self.viewController = [[EverydayCityViewController alloc] initWithNibName:nil bundle:nil];
-    }
+    self.window.rootViewController = self.viewController = [[MainViewController alloc] initWithNibName:nil bundle:nil];
     [self.window makeKeyAndVisible];
+    [self.viewController showProperView:NO];
     
     // Tell the SDK the app finished launching so it can properly handle push notifications, etc
     [LQSession application:application didFinishLaunchingWithOptions:launchOptions];
@@ -112,7 +108,7 @@ EverydayCityAppDelegate *appDelegate;
             [[LQTracker sharedTracker] setProfile:LQTrackerProfilePassive];
             
             // Show the main app window
-            [self.viewController presentViewController:[[EverydayCityViewController alloc] initWithNibName:nil bundle:nil] animated:YES completion:NULL]; 
+            [self.viewController showProperView:YES];
             
         } else {
             // Error logging in
@@ -128,7 +124,7 @@ EverydayCityAppDelegate *appDelegate;
     [[LQTracker sharedTracker] setSession:nil];
     [LQSession setSavedSession:nil];
 
-    [self.viewController presentViewController:[[WelcomeViewController alloc] initWithNibName:nil bundle:nil] animated:YES completion:NULL]; 
+    [self.viewController showProperView:YES];
 }
 
 - (void)fbDidNotLogin:(BOOL)cancelled {
