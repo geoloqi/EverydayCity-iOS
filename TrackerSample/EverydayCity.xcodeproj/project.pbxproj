@@ -27,6 +27,8 @@
 		0FE6BA8E153A5CB2002D91DD /* LogoutPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FE6BA86153A5CB2002D91DD /* LogoutPressed@2x.png */; };
 		0FE6BA90153A62BB002D91DD /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FE6BA8F153A62BB002D91DD /* Icon@2x.png */; };
 		0FE6BA92153A6312002D91DD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FE6BA91153A6311002D91DD /* Icon.png */; };
+		0FE6BA95153A67BB002D91DD /* background-geofencing-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FE6BA93153A67BB002D91DD /* background-geofencing-icon.png */; };
+		0FE6BA96153A67BB002D91DD /* background-geofencing-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FE6BA94153A67BB002D91DD /* background-geofencing-icon@2x.png */; };
 		493B86A114930FA0000AC7DD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493B86A014930FA0000AC7DD /* CoreLocation.framework */; };
 		493C097D149D8BE300F2D05A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493C097C149D8BE300F2D05A /* CoreFoundation.framework */; };
 		496F6E42149DEED100FD050F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 496F6E41149DEED100FD050F /* libsqlite3.dylib */; };
@@ -76,6 +78,8 @@
 		0FE6BA86153A5CB2002D91DD /* LogoutPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LogoutPressed@2x.png"; sourceTree = "<group>"; };
 		0FE6BA8F153A62BB002D91DD /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		0FE6BA91153A6311002D91DD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		0FE6BA93153A67BB002D91DD /* background-geofencing-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-geofencing-icon.png"; sourceTree = "<group>"; };
+		0FE6BA94153A67BB002D91DD /* background-geofencing-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-geofencing-icon@2x.png"; sourceTree = "<group>"; };
 		493B86A014930FA0000AC7DD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		493C097C149D8BE300F2D05A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		496F6E41149DEED100FD050F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -212,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				0FE6BA6B153A4E53002D91DD /* 02-redo.png */,
+				0FE6BA93153A67BB002D91DD /* background-geofencing-icon.png */,
+				0FE6BA94153A67BB002D91DD /* background-geofencing-icon@2x.png */,
 				0FE6BA6D153A51B2002D91DD /* powered-by-geoloqi.png */,
 				0FE6BA6E153A51B2002D91DD /* powered-by-geoloqi@2x.png */,
 				497120D81490755C0046BDA3 /* EverydayCity-Info.plist */,
@@ -292,6 +298,8 @@
 				0FE6BA8E153A5CB2002D91DD /* LogoutPressed@2x.png in Resources */,
 				0FE6BA90153A62BB002D91DD /* Icon@2x.png in Resources */,
 				0FE6BA92153A6312002D91DD /* Icon.png in Resources */,
+				0FE6BA95153A67BB002D91DD /* background-geofencing-icon.png in Resources */,
+				0FE6BA96153A67BB002D91DD /* background-geofencing-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
