@@ -1,5 +1,7 @@
-Geoloqi SDK
-===========
+Everyday City
+=============
+
+
 
 Also see our [Getting Started Guide](https://developers.geoloqi.com/ios/getting-started) on our developer website.
 

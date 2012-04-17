@@ -43,7 +43,9 @@
 }
 
 - (IBAction)signinWasTapped:(id)sender {
-    [appDelegate.facebook authorize:nil];
+    NSMutableArray *scopes = [NSMutableArray arrayWithCapacity:1];
+    [scopes insertObject:@"publish_actions" atIndex:0];
+    [appDelegate.facebook authorize:scopes];
 }
 
 @end

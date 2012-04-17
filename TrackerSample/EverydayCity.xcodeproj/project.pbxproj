@@ -203,6 +203,8 @@
 				49A878E2149D34D200B7D168 /* LQConfig.h */,
 				497120DF1490755C0046BDA3 /* EverydayCityAppDelegate.h */,
 				497120E01490755C0046BDA3 /* EverydayCityAppDelegate.m */,
+				0FE6BA97153B4421002D91DD /* MainViewController.h */,
+				0FE6BA98153B4421002D91DD /* MainViewController.m */,
 				0FE6BA2F1539FD0A002D91DD /* WelcomeViewController.h */,
 				0FE6BA301539FD0A002D91DD /* WelcomeViewController.m */,
 				0FE6BA311539FD0A002D91DD /* WelcomeViewController.xib */,
@@ -210,8 +212,6 @@
 				497120E31490755C0046BDA3 /* EverydayCityViewController.m */,
 				49E265D314C3949C00B19D71 /* EverydayCityViewController.xib */,
 				497120D71490755C0046BDA3 /* Supporting Files */,
-				0FE6BA97153B4421002D91DD /* MainViewController.h */,
-				0FE6BA98153B4421002D91DD /* MainViewController.m */,
 			);
 			name = EverydayCity;
 			path = TrackerSample;
