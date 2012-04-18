@@ -24,6 +24,16 @@ EverydayCityAppDelegate *appDelegate;
 @synthesize viewController = _viewController;
 @synthesize facebook;
 
+- (void)registerForPushNotifications {
+    [LQSession registerForPushNotificationsWithCallback:^(NSData *deviceToken, NSError *error) {
+        if(error){
+            NSLog(@"Failed to register for push tokens: %@", error);
+        } else {
+            NSLog(@"Got a push token! %@", deviceToken);
+        }
+    }];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     appDelegate = self;
@@ -46,6 +56,10 @@ EverydayCityAppDelegate *appDelegate;
     [self.window makeKeyAndVisible];
     [self.viewController showProperView:NO];
     
+    if([LQSession savedSession]) {
+        [self registerForPushNotifications];
+    }
+
     // Tell the SDK the app finished launching so it can properly handle push notifications, etc
     [LQSession application:application didFinishLaunchingWithOptions:launchOptions];
 
@@ -107,6 +121,8 @@ EverydayCityAppDelegate *appDelegate;
             [[LQTracker sharedTracker] setSession:[LQSession sessionWithAccessToken:[responseDictionary objectForKey:@"lq_access_token"]]];
             [[LQTracker sharedTracker] setProfile:LQTrackerProfilePassive];
             
+            [self registerForPushNotifications];
+
             // Show the main app window
             [self.viewController showProperView:YES];
             

@@ -21,6 +21,4 @@
 - (IBAction)fbLogoutWasTapped:(UIButton *)sender;
 - (int)segmentIndexForTrackingProfile:(LQTrackerProfile)profile;
 
-- (void)refreshPushNotificationStatus;
-
 @end

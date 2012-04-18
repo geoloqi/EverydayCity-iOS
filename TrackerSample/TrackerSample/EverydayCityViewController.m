@@ -100,7 +100,6 @@
 - (IBAction)registerForPushWasTapped:(UIButton *)sender
 {
     [LQSession registerForPushNotificationsWithCallback:^(NSData *deviceToken, NSError *error) {
-        [self refreshPushNotificationStatus];
         if(error){
             NSLog(@"Failed to register for push tokens: %@", error);
         } else {
