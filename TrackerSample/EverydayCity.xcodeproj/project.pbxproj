@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F6B3FB4153E73AE00AD7351 /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6B3FB3153E73AE00AD7351 /* Icon-iPad.png */; };
 		0FE4891614FEFD5500F3F1F9 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE4891514FEFD5500F3F1F9 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0FE6BA321539FD0B002D91DD /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE6BA301539FD0A002D91DD /* WelcomeViewController.m */; };
 		0FE6BA331539FD0B002D91DD /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FE6BA311539FD0A002D91DD /* WelcomeViewController.xib */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F6B3FB3153E73AE00AD7351 /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad.png"; sourceTree = "<group>"; };
 		0FE4891414FEFD5500F3F1F9 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = JSONKit/JSONKit.h; sourceTree = SOURCE_ROOT; };
 		0FE4891514FEFD5500F3F1F9 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
 		0FE6BA2F1539FD0A002D91DD /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				0FE6BA91153A6311002D91DD /* Icon.png */,
+				0F6B3FB3153E73AE00AD7351 /* Icon-iPad.png */,
 				0FE6BA8F153A62BB002D91DD /* Icon@2x.png */,
 				0FE6BA7D153A5AAA002D91DD /* Default@2x.png */,
 				0FE6BA7B153A5AA1002D91DD /* Default.png */,
@@ -305,6 +308,7 @@
 				0FE6BA92153A6312002D91DD /* Icon.png in Resources */,
 				0FE6BA95153A67BB002D91DD /* background-geofencing-icon.png in Resources */,
 				0FE6BA96153A67BB002D91DD /* background-geofencing-icon@2x.png in Resources */,
+				0F6B3FB4153E73AE00AD7351 /* Icon-iPad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,12 +10,11 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>everyday-city-facebook-v2@2x.png</string>
 		<string>Icon.png</string>
 		<string>Default.png</string>
 		<string>Default@2x.png</string>
 		<string>Icon@2x.png</string>
-		<string>everyday-city-v2.png</string>
+		<string>Icon-iPad.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -23,12 +22,11 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>everyday-city-facebook-v2@2x.png</string>
 				<string>Icon.png</string>
 				<string>Default.png</string>
 				<string>Default@2x.png</string>
 				<string>Icon@2x.png</string>
-				<string>everyday-city-v2.png</string>
+				<string>Icon-iPad.png</string>
 			</array>
 		</dict>
 	</dict>
