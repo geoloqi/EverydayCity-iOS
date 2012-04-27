@@ -12,7 +12,7 @@
 
 @interface MainViewController : UIViewController
 
-@property (strong, nonatomic) EverydayCityViewController *cityViewController;
+@property (strong, nonatomic) UIViewController *cityViewController;
 @property (strong, nonatomic) WelcomeViewController *welcomeViewController;
 
 - (void)showCityView:(BOOL)animated;

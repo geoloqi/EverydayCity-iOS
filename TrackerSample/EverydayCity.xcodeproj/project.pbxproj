@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2C1F931547936A00436D4B /* TabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C1F921547936A00436D4B /* TabBarController.xib */; };
+		0F2C1F97154795D600436D4B /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C1F95154795D600436D4B /* city.png */; };
+		0F2C1F98154795D600436D4B /* city@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C1F96154795D600436D4B /* city@2x.png */; };
+		0F2C1F9B1547981200436D4B /* timer.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C1F991547981200436D4B /* timer.png */; };
+		0F2C1F9C1547981200436D4B /* timer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C1F9A1547981200436D4B /* timer@2x.png */; };
+		0F2C1FA315479B8100436D4B /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C1FA115479B8000436D4B /* HistoryViewController.m */; };
+		0F2C1FA415479B8100436D4B /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C1FA215479B8000436D4B /* HistoryViewController.xib */; };
 		0F6B3FB4153E73AE00AD7351 /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6B3FB3153E73AE00AD7351 /* Icon-iPad.png */; };
 		0FE4891614FEFD5500F3F1F9 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE4891514FEFD5500F3F1F9 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0FE6BA321539FD0B002D91DD /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE6BA301539FD0A002D91DD /* WelcomeViewController.m */; };
@@ -45,6 +52,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F2C1F921547936A00436D4B /* TabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarController.xib; sourceTree = "<group>"; };
+		0F2C1F95154795D600436D4B /* city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city.png; sourceTree = SOURCE_ROOT; };
+		0F2C1F96154795D600436D4B /* city@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "city@2x.png"; sourceTree = SOURCE_ROOT; };
+		0F2C1F991547981200436D4B /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer.png; sourceTree = SOURCE_ROOT; };
+		0F2C1F9A1547981200436D4B /* timer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer@2x.png"; sourceTree = SOURCE_ROOT; };
+		0F2C1FA015479B8000436D4B /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		0F2C1FA115479B8000436D4B /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		0F2C1FA215479B8000436D4B /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 		0F6B3FB3153E73AE00AD7351 /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad.png"; sourceTree = "<group>"; };
 		0FE4891414FEFD5500F3F1F9 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = JSONKit/JSONKit.h; sourceTree = SOURCE_ROOT; };
 		0FE4891514FEFD5500F3F1F9 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
@@ -214,6 +229,10 @@
 				497120E21490755C0046BDA3 /* EverydayCityViewController.h */,
 				497120E31490755C0046BDA3 /* EverydayCityViewController.m */,
 				49E265D314C3949C00B19D71 /* EverydayCityViewController.xib */,
+				0F2C1FA015479B8000436D4B /* HistoryViewController.h */,
+				0F2C1FA115479B8000436D4B /* HistoryViewController.m */,
+				0F2C1FA215479B8000436D4B /* HistoryViewController.xib */,
+				0F2C1F921547936A00436D4B /* TabBarController.xib */,
 				497120D71490755C0046BDA3 /* Supporting Files */,
 			);
 			name = EverydayCity;
@@ -223,6 +242,10 @@
 		497120D71490755C0046BDA3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0F2C1F95154795D600436D4B /* city.png */,
+				0F2C1F96154795D600436D4B /* city@2x.png */,
+				0F2C1F991547981200436D4B /* timer.png */,
+				0F2C1F9A1547981200436D4B /* timer@2x.png */,
 				0FE6BA6B153A4E53002D91DD /* 02-redo.png */,
 				0FE6BA93153A67BB002D91DD /* background-geofencing-icon.png */,
 				0FE6BA94153A67BB002D91DD /* background-geofencing-icon@2x.png */,
@@ -309,6 +332,12 @@
 				0FE6BA95153A67BB002D91DD /* background-geofencing-icon.png in Resources */,
 				0FE6BA96153A67BB002D91DD /* background-geofencing-icon@2x.png in Resources */,
 				0F6B3FB4153E73AE00AD7351 /* Icon-iPad.png in Resources */,
+				0F2C1F931547936A00436D4B /* TabBarController.xib in Resources */,
+				0F2C1F97154795D600436D4B /* city.png in Resources */,
+				0F2C1F98154795D600436D4B /* city@2x.png in Resources */,
+				0F2C1F9B1547981200436D4B /* timer.png in Resources */,
+				0F2C1F9C1547981200436D4B /* timer@2x.png in Resources */,
+				0F2C1FA415479B8100436D4B /* HistoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +354,7 @@
 				0FE4891614FEFD5500F3F1F9 /* JSONKit.m in Sources */,
 				0FE6BA321539FD0B002D91DD /* WelcomeViewController.m in Sources */,
 				0FE6BA99153B4422002D91DD /* MainViewController.m in Sources */,
+				0F2C1FA315479B8100436D4B /* HistoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +462,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = EverydayCity;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -458,6 +489,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = EverydayCity;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

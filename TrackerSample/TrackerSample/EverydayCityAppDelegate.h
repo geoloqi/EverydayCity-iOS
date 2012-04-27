@@ -11,7 +11,7 @@
 
 @class EverydayCityViewController;
 
-@interface EverydayCityAppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate, FBSessionDelegate> {
+@interface EverydayCityAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate,UIAlertViewDelegate, FBSessionDelegate> {
     Facebook *facebook;
 }
 
@@ -19,7 +19,8 @@
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
 
-@property (strong, nonatomic) IBOutlet MainViewController *viewController;
+@property (strong, nonatomic) MainViewController *viewController;
+@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 
 @end
 

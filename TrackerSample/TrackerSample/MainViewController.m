@@ -23,7 +23,7 @@
     if (self) {
         // Custom initialization
         self.welcomeViewController = [[WelcomeViewController alloc] initWithNibName:nil bundle:nil];
-        self.cityViewController = [[EverydayCityViewController alloc] initWithNibName:nil bundle:nil];
+        self.cityViewController = appDelegate.tabBarController;
     }
     return self;
 }

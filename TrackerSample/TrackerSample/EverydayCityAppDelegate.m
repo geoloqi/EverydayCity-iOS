@@ -20,8 +20,9 @@ EverydayCityAppDelegate *appDelegate;
 @implementation EverydayCityAppDelegate {
 }
 
-@synthesize window = _window;
-@synthesize viewController = _viewController;
+@synthesize window;
+@synthesize viewController;
+@synthesize tabBarController;
 @synthesize facebook;
 
 - (void)registerForPushNotifications {
@@ -37,7 +38,7 @@ EverydayCityAppDelegate *appDelegate;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     appDelegate = self;
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 		
     // Sets your API Key and secret
 	[LQSession setAPIKey:LQ_APIKey secret:LQ_APISecret];
@@ -52,9 +53,12 @@ EverydayCityAppDelegate *appDelegate;
         facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
     }
     
-    self.window.rootViewController = self.viewController = [[MainViewController alloc] initWithNibName:nil bundle:nil];
+    NSLog(@"===== self.window %@", self.window);
+    
+    // self.window.rootViewController = self.viewController = [[MainViewController alloc] initWithNibName:nil bundle:nil];
+    [self.window addSubview:self.tabBarController.view];
     [self.window makeKeyAndVisible];
-    [self.viewController showProperView:NO];
+//    [self.viewController showProperView:NO];
     
     if([LQSession savedSession]) {
         [self registerForPushNotifications];
