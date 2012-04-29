@@ -10,4 +10,9 @@
 
 @interface HistoryViewController : UIViewController
 
+@property IBOutlet UIWebView *webView;
+
+- (IBAction)reloadWasTapped:(UIButton *)sender;
+
+
 @end

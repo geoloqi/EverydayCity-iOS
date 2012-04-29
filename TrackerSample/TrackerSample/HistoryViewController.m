@@ -7,12 +7,15 @@
 //
 
 #import "HistoryViewController.h"
+#import "EverydayCityAppDelegate.h"
 
 @interface HistoryViewController ()
 
 @end
 
 @implementation HistoryViewController
+
+@synthesize webView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +29,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    webView.scrollView.bounces = NO;
+    
     // Do any additional setup after loading the view from its nib.
+    NSURL *url = [NSURL URLWithString:@"http://127.0.0.1:9800/history"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url 
+                                                                cachePolicy:NSURLRequestReloadIgnoringCacheData 
+                                                            timeoutInterval:10.0];
+    [request setValue:[NSString stringWithFormat:@"Bearer %@", [LQSession savedSession].accessToken] forHTTPHeaderField:@"Authorization"];
+    [self.webView loadRequest:request];
 }
 
 - (void)viewDidUnload
@@ -39,6 +50,12 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+# pragma mark -
+
+- (IBAction)reloadWasTapped:(UIButton *)sender {
+    [self.webView reload];
 }
 
 @end
