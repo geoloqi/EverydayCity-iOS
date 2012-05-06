@@ -32,7 +32,7 @@
     webView.scrollView.bounces = NO;
     
     // Do any additional setup after loading the view from its nib.
-    NSURL *url = [NSURL URLWithString:@"http://127.0.0.1:9800/history"];
+    NSURL *url = [NSURL URLWithString:@"http://everydaycity.com/history"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url 
                                                                 cachePolicy:NSURLRequestReloadIgnoringCacheData 
                                                             timeoutInterval:10.0];
@@ -55,6 +55,7 @@
 # pragma mark -
 
 - (IBAction)reloadWasTapped:(UIButton *)sender {
+    [[LQTracker sharedTracker] appDidBecomeActive];
     [self.webView reload];
 }
 

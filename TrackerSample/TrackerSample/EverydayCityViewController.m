@@ -39,7 +39,9 @@
     [super viewWillAppear:animated];
     
     self.currentTrackingProfile.selectedSegmentIndex = [self segmentIndexForTrackingProfile:[[LQTracker sharedTracker] profile]];
-    
+
+    [[LQTracker sharedTracker] appDidBecomeActive];
+
     NSLog(@"Date of last location update: %@", [[LQTracker sharedTracker] dateOfLastLocationUpdate]);
     if([LQSession savedSession]) {
         [self getLocationButtonWasTapped:nil];
@@ -114,6 +116,8 @@
 
 - (IBAction)getLocationButtonWasTapped:(UIButton *)sender
 {
+    [[LQTracker sharedTracker] appDidBecomeActive];
+
     // self.currentLocationField.text = @"Loading...";
     self.currentLocationActivityIndicator.hidden = NO;
 
