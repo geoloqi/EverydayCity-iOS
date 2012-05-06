@@ -20,5 +20,6 @@
 - (IBAction)getLocationButtonWasTapped:(UIButton *)sender;
 - (IBAction)fbLogoutWasTapped:(UIButton *)sender;
 - (int)segmentIndexForTrackingProfile:(LQTrackerProfile)profile;
+- (void)updateToggleState;
 
 @end

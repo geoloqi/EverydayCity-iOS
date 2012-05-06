@@ -38,14 +38,24 @@
 {
     [super viewWillAppear:animated];
     
-    self.currentTrackingProfile.selectedSegmentIndex = [self segmentIndexForTrackingProfile:[[LQTracker sharedTracker] profile]];
-
     [[LQTracker sharedTracker] appDidBecomeActive];
 
     NSLog(@"Date of last location update: %@", [[LQTracker sharedTracker] dateOfLastLocationUpdate]);
     if([LQSession savedSession]) {
         [self getLocationButtonWasTapped:nil];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+											 selector:@selector(trackingStateChanged:)
+												 name:ECTrackingStateChanged
+											   object:nil];
+
+    [self updateToggleState];
+}
+
+- (void)trackingStateChanged:(NSNotificationCenter *)notification
+{
+    [self updateToggleState];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -64,6 +74,11 @@
 }
 
 #pragma mark -
+
+- (void)updateToggleState
+{
+    self.currentTrackingProfile.selectedSegmentIndex = [self segmentIndexForTrackingProfile:[[LQTracker sharedTracker] profile]];
+}
 
 - (IBAction)fbLogoutWasTapped:(UIButton *)sender 
 {

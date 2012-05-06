@@ -7,7 +7,8 @@
 
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
-#import "MainViewController.h"
+
+static NSString *const ECTrackingStateChanged = @"com.everydaycity.ECTrackingStateChanged";
 
 @class EverydayCityViewController;
 
@@ -18,8 +19,6 @@
 @property (nonatomic, retain) Facebook *facebook;
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
-
-@property (strong, nonatomic) MainViewController *viewController;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 
 @end

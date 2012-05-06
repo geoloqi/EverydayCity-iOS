@@ -14,7 +14,6 @@
 		0F2C1F9C1547981200436D4B /* timer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C1F9A1547981200436D4B /* timer@2x.png */; };
 		0F2C1FA315479B8100436D4B /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C1FA115479B8000436D4B /* HistoryViewController.m */; };
 		0F2C1FA415479B8100436D4B /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C1FA215479B8000436D4B /* HistoryViewController.xib */; };
-		0F6B3FB4153E73AE00AD7351 /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F6B3FB3153E73AE00AD7351 /* Icon-iPad.png */; };
 		0FE4891614FEFD5500F3F1F9 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE4891514FEFD5500F3F1F9 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0FE6BA321539FD0B002D91DD /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE6BA301539FD0A002D91DD /* WelcomeViewController.m */; };
 		0FE6BA331539FD0B002D91DD /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FE6BA311539FD0A002D91DD /* WelcomeViewController.xib */; };
@@ -37,7 +36,6 @@
 		0FE6BA92153A6312002D91DD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FE6BA91153A6311002D91DD /* Icon.png */; };
 		0FE6BA95153A67BB002D91DD /* background-geofencing-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FE6BA93153A67BB002D91DD /* background-geofencing-icon.png */; };
 		0FE6BA96153A67BB002D91DD /* background-geofencing-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FE6BA94153A67BB002D91DD /* background-geofencing-icon@2x.png */; };
-		0FE6BA99153B4422002D91DD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE6BA98153B4421002D91DD /* MainViewController.m */; };
 		493B86A114930FA0000AC7DD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493B86A014930FA0000AC7DD /* CoreLocation.framework */; };
 		493C097D149D8BE300F2D05A /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493C097C149D8BE300F2D05A /* CoreFoundation.framework */; };
 		496F6E42149DEED100FD050F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 496F6E41149DEED100FD050F /* libsqlite3.dylib */; };
@@ -60,7 +58,6 @@
 		0F2C1FA015479B8000436D4B /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		0F2C1FA115479B8000436D4B /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		0F2C1FA215479B8000436D4B /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
-		0F6B3FB3153E73AE00AD7351 /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad.png"; sourceTree = "<group>"; };
 		0FE4891414FEFD5500F3F1F9 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = JSONKit/JSONKit.h; sourceTree = SOURCE_ROOT; };
 		0FE4891514FEFD5500F3F1F9 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
 		0FE6BA2F1539FD0A002D91DD /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
@@ -98,8 +95,6 @@
 		0FE6BA91153A6311002D91DD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		0FE6BA93153A67BB002D91DD /* background-geofencing-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-geofencing-icon.png"; sourceTree = "<group>"; };
 		0FE6BA94153A67BB002D91DD /* background-geofencing-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-geofencing-icon@2x.png"; sourceTree = "<group>"; };
-		0FE6BA97153B4421002D91DD /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		0FE6BA98153B4421002D91DD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		493B86A014930FA0000AC7DD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		493C097C149D8BE300F2D05A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		496F6E41149DEED100FD050F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -181,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				0FE6BA91153A6311002D91DD /* Icon.png */,
-				0F6B3FB3153E73AE00AD7351 /* Icon-iPad.png */,
 				0FE6BA8F153A62BB002D91DD /* Icon@2x.png */,
 				0FE6BA7D153A5AAA002D91DD /* Default@2x.png */,
 				0FE6BA7B153A5AA1002D91DD /* Default.png */,
@@ -221,8 +215,6 @@
 				49A878E2149D34D200B7D168 /* LQConfig.h */,
 				497120DF1490755C0046BDA3 /* EverydayCityAppDelegate.h */,
 				497120E01490755C0046BDA3 /* EverydayCityAppDelegate.m */,
-				0FE6BA97153B4421002D91DD /* MainViewController.h */,
-				0FE6BA98153B4421002D91DD /* MainViewController.m */,
 				0FE6BA2F1539FD0A002D91DD /* WelcomeViewController.h */,
 				0FE6BA301539FD0A002D91DD /* WelcomeViewController.m */,
 				0FE6BA311539FD0A002D91DD /* WelcomeViewController.xib */,
@@ -331,7 +323,6 @@
 				0FE6BA92153A6312002D91DD /* Icon.png in Resources */,
 				0FE6BA95153A67BB002D91DD /* background-geofencing-icon.png in Resources */,
 				0FE6BA96153A67BB002D91DD /* background-geofencing-icon@2x.png in Resources */,
-				0F6B3FB4153E73AE00AD7351 /* Icon-iPad.png in Resources */,
 				0F2C1F931547936A00436D4B /* TabBarController.xib in Resources */,
 				0F2C1F97154795D600436D4B /* city.png in Resources */,
 				0F2C1F98154795D600436D4B /* city@2x.png in Resources */,
@@ -353,7 +344,6 @@
 				497120E41490755C0046BDA3 /* EverydayCityViewController.m in Sources */,
 				0FE4891614FEFD5500F3F1F9 /* JSONKit.m in Sources */,
 				0FE6BA321539FD0B002D91DD /* WelcomeViewController.m in Sources */,
-				0FE6BA99153B4422002D91DD /* MainViewController.m in Sources */,
 				0F2C1FA315479B8100436D4B /* HistoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

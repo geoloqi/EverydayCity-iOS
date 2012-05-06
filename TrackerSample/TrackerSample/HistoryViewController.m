@@ -26,18 +26,21 @@
     return self;
 }
 
-- (void)viewDidLoad
+-(void)loadHistoryView
 {
-    [super viewDidLoad];
-    webView.scrollView.bounces = NO;
-    
-    // Do any additional setup after loading the view from its nib.
     NSURL *url = [NSURL URLWithString:@"http://everydaycity.com/history"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url 
                                                                 cachePolicy:NSURLRequestReloadIgnoringCacheData 
                                                             timeoutInterval:10.0];
-    [request setValue:[NSString stringWithFormat:@"Bearer %@", [LQSession savedSession].accessToken] forHTTPHeaderField:@"Authorization"];
+    [request setValue:[NSString stringWithFormat:@"Bearer %@", LQSession.savedSession.accessToken] forHTTPHeaderField:@"Authorization"];
     [self.webView loadRequest:request];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    webView.scrollView.bounces = NO;
+    [self loadHistoryView];
 }
 
 - (void)viewDidUnload
@@ -56,7 +59,7 @@
 
 - (IBAction)reloadWasTapped:(UIButton *)sender {
     [[LQTracker sharedTracker] appDidBecomeActive];
-    [self.webView reload];
+    [self loadHistoryView];
 }
 
 @end

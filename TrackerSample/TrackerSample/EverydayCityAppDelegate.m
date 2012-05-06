@@ -6,8 +6,8 @@
 //
 
 #import "EverydayCityAppDelegate.h"
+#import "WelcomeViewController.h"
 
-#import "MainViewController.h"
 
 @interface LQSDKUtils : NSObject
 + (id)objectFromJSONData:(NSData *)data error:(NSError **)error;
@@ -21,7 +21,6 @@ EverydayCityAppDelegate *appDelegate;
 }
 
 @synthesize window;
-@synthesize viewController;
 @synthesize tabBarController;
 @synthesize facebook;
 
@@ -53,19 +52,26 @@ EverydayCityAppDelegate *appDelegate;
         facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
     }
     
-    NSLog(@"===== self.window %@", self.window);
-    
-    // self.window.rootViewController = self.viewController = [[MainViewController alloc] initWithNibName:nil bundle:nil];
     [self.window addSubview:self.tabBarController.view];
     [self.window makeKeyAndVisible];
-//    [self.viewController showProperView:NO];
-    
+
     if([LQSession savedSession]) {
         [self registerForPushNotifications];
+    } else {
+        NSLog(@"Welcome!");
+        WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] init];
+        [self.tabBarController presentModalViewController:welcomeViewController animated:YES];
     }
 
     // Tell the SDK the app finished launching so it can properly handle push notifications, etc
     [LQSession application:application didFinishLaunchingWithOptions:launchOptions];
+
+    // First time the app launches, show the "current city" view instead of the history view since it will be blank
+	if(![[NSUserDefaults standardUserDefaults] boolForKey:@"appHasLaunchedOnce"]){
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"appHasLaunchedOnce"];
+        tabBarController.selectedIndex = 1;
+		[[NSUserDefaults standardUserDefaults] synchronize];
+	}
 
     return YES;
 }
@@ -117,6 +123,8 @@ EverydayCityAppDelegate *appDelegate;
     [request setHTTPBody:jsonData];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
 
+    [self.tabBarController dismissModalViewControllerAnimated:YES];
+
     LQSession *tmpSession = [[LQSession alloc] init];
     [tmpSession runAPIRequest:request completion:^(NSHTTPURLResponse *response, NSDictionary *responseDictionary, NSError *error) {
         // On response, store the Geoloqi token and start tracking in passive mode
@@ -126,10 +134,9 @@ EverydayCityAppDelegate *appDelegate;
             [[LQTracker sharedTracker] setProfile:LQTrackerProfilePassive];
             
             [self registerForPushNotifications];
-
-            // Show the main app window
-            [self.viewController showProperView:YES];
-            
+            [[NSNotificationCenter defaultCenter] postNotificationName:ECTrackingStateChanged
+                                                                object:nil
+                                                              userInfo:nil];
         } else {
             // Error logging in
         }
@@ -145,7 +152,8 @@ EverydayCityAppDelegate *appDelegate;
     [[LQTracker sharedTracker] setSession:nil];
     [[NSUserDefaults standardUserDefaults] synchronize];
 
-    [self.viewController showProperView:YES];
+    WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] init];
+    [self.tabBarController presentModalViewController:welcomeViewController animated:YES];
 }
 
 - (void)fbDidNotLogin:(BOOL)cancelled {
