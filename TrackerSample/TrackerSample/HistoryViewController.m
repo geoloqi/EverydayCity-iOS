@@ -40,7 +40,14 @@
 {
     [super viewDidLoad];
     webView.scrollView.bounces = NO;
-    [self loadHistoryView];
+    if([LQSession savedSession]) {
+        [self loadHistoryView];
+    } else {
+        [[NSNotificationCenter defaultCenter] addObserver:self 
+                                                 selector:@selector(loadHistoryView)
+                                                     name:ECDidLogInNotification
+                                                   object:nil];
+    }
 }
 
 - (void)viewDidUnload

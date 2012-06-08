@@ -131,10 +131,14 @@ EverydayCityAppDelegate *appDelegate;
         NSLog(@"Response! %@", responseDictionary);
         if([responseDictionary objectForKey:@"lq_access_token"]) {
             [[LQTracker sharedTracker] setSession:[LQSession sessionWithAccessToken:[responseDictionary objectForKey:@"lq_access_token"]]];
-            [[LQTracker sharedTracker] setProfile:LQTrackerProfilePassive];
-            
-            [self registerForPushNotifications];
+            [[LQTracker sharedTracker] setProfile:LQTrackerProfileRough];
             [[NSNotificationCenter defaultCenter] postNotificationName:ECTrackingStateChanged
+                                                                object:nil
+                                                              userInfo:nil];
+
+            [self registerForPushNotifications];
+
+            [[NSNotificationCenter defaultCenter] postNotificationName:ECDidLogInNotification
                                                                 object:nil
                                                               userInfo:nil];
         } else {

@@ -82,7 +82,7 @@
 						<string key="NSFrame">{{8, 293}, {153, 21}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="853560601"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:328</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -215,7 +215,7 @@
 					<object class="IBUITextView" id="241864294">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{8, 106}, {280, 75}}</string>
+						<string key="NSFrame">{{8, 110}, {280, 75}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="817271111"/>
@@ -246,7 +246,7 @@
 					<object class="IBUITextView" id="817271111">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{8, 179}, {249, 106}}</string>
+						<string key="NSFrame">{{8, 183}, {280, 106}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="163095055"/>
@@ -259,7 +259,7 @@
 						<bool key="IBUIShowsHorizontalScrollIndicator">NO</bool>
 						<bool key="IBUIShowsVerticalScrollIndicator">NO</bool>
 						<bool key="IBUIEditable">NO</bool>
-						<string key="IBUIText">You should see this icon in your phone's top menu, indicating that the app is monitoring your location in a battery-safe way.</string>
+						<string key="IBUIText">Even though you will see the location services icon in your phone's menu, the app is monitoring your location in a battery-safe way.</string>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<int key="IBUIAutocapitalizationType">2</int>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -309,21 +309,6 @@
 						</object>
 						<reference key="IBUIFontDescription" ref="738069901"/>
 						<reference key="IBUIFont" ref="993763696"/>
-					</object>
-					<object class="IBUIImageView" id="853560601">
-						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{248, 213}, {52, 52}}</string>
-						<reference key="NSSuperview" ref="774585933"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="633452810"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">background-geofencing-icon.png</string>
-						</object>
 					</object>
 					<object class="IBUILabel" id="709087457">
 						<reference key="NSNextResponder" ref="774585933"/>
@@ -517,7 +502,6 @@ AAgACAAIAAEAAQABAAE</bytes>
 							<reference ref="722470288"/>
 							<reference ref="709087457"/>
 							<reference ref="817271111"/>
-							<reference ref="853560601"/>
 							<reference ref="268468793"/>
 						</array>
 						<reference key="parent" ref="0"/>
@@ -579,11 +563,6 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">55</int>
-						<reference key="object" ref="853560601"/>
-						<reference key="parent" ref="774585933"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">56</int>
 						<reference key="object" ref="709087457"/>
 						<reference key="parent" ref="774585933"/>
@@ -618,7 +597,6 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<string key="52.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="53.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="53.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
-				<string key="55.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="56.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -694,7 +672,6 @@ AAgACAAIAAEAAQABAAE</bytes>
 			<string key="02-redo.png">{30, 26}</string>
 			<string key="LoginPressed.png">{16, 16}</string>
 			<string key="LogoutNormal.png">{81, 29}</string>
-			<string key="background-geofencing-icon.png">{74, 74}</string>
 			<string key="powered-by-geoloqi.png">{100, 35}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1179</string>

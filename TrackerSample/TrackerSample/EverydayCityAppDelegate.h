@@ -9,6 +9,7 @@
 #import "FBConnect.h"
 
 static NSString *const ECTrackingStateChanged = @"com.everydaycity.ECTrackingStateChanged";
+static NSString *const ECDidLogInNotification = @"com.everydaycity.ECDidLogInNotification";
 
 @class EverydayCityViewController;
 

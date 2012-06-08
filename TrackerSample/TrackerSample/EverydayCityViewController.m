@@ -49,6 +49,10 @@
 											 selector:@selector(trackingStateChanged:)
 												 name:ECTrackingStateChanged
 											   object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didUploadLocation:)
+                                                 name:LQTrackerDidUploadLocationNotification
+                                               object:nil];
 
     [self updateToggleState];
 }
@@ -56,6 +60,11 @@
 - (void)trackingStateChanged:(NSNotificationCenter *)notification
 {
     [self updateToggleState];
+}
+
+- (void)didUploadLocation:(NSNotificationCenter *)notification
+{
+    [self getLocationButtonWasTapped:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -88,20 +97,15 @@
 - (int)segmentIndexForTrackingProfile:(LQTrackerProfile)profile
 {
     switch(profile) {
-        case LQTrackerProfileOff:      return 0;
-        case LQTrackerProfilePassive:  return 1;
-        case LQTrackerProfileRealtime: return 2;
-        case LQTrackerProfileLogging:  return 3;
+        case LQTrackerProfileRough:    return 1;
+        default:                       return 0;
     }
 }
 
 - (LQTrackerProfile)profileForSegmentIndex:(int)index
 {
     switch(index) {
-        case 0: return LQTrackerProfileOff;
-        case 1: return LQTrackerProfilePassive;
-        case 2: return LQTrackerProfileRealtime;
-        case 3: return LQTrackerProfileLogging;
+        case 1:  return LQTrackerProfileRough;
         default: return LQTrackerProfileOff;
     }
 }
