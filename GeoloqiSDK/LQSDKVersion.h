@@ -5,8 +5,9 @@
 //  Copyright (c) 2012 Geoloqi, Inc. All rights reserved.
 //
 
+static NSString *const LQSDKNameString = @"com.geoloqi.iphone";
 
-static NSString *const LQSDKVersionString = @"12.125";
+static NSString *const LQSDKVersionString = @"12.159";
 
 // This build string is automatically updated when the sdk is built! Do not modify.
-static NSString *const LQSDKVersionGitVersion = @"4f844d9fc72a6c14c243d8b59a6a423bd2658c92";
+static NSString *const LQSDKVersionGitVersion = @"a16508c16de9bb0d69043b16f25c58b4cc77114b";
