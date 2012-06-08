@@ -10,4 +10,4 @@ static NSString *const LQSDKNameString = @"com.geoloqi.iphone";
 static NSString *const LQSDKVersionString = @"12.159";
 
 // This build string is automatically updated when the sdk is built! Do not modify.
-static NSString *const LQSDKVersionGitVersion = @"a16508c16de9bb0d69043b16f25c58b4cc77114b";
+static NSString *const LQSDKVersionGitVersion = @"89b782e8433ad7e0e59c55e1067be16e3903fa50";
